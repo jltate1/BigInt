@@ -40,5 +40,20 @@ BigInt big_random(size_t num_digits = 0) {
     return big_rand;
 }
 
+friend BigInt big_random(const T& low, const T& high) {
+    std::random_device rand_generator; // creating a random number generator
+    
+    BigInt big_rand;
+    big_rand.value = "";
+
+    // update the value while it's low <= BigInt <= high
+    while ((big_rand.value >= low && big_rand.value =< high) {
+    big_rand.value += std::to_string(rand_generator());
+    }
+
+    return big_rand;
+}
+
+	
 
 #endif  // BIG_INT_RANDOM_FUNCTIONS_HPP
